@@ -162,13 +162,14 @@ batsman=['AC Gilchrist', 'Azhar Mahmood', 'M Vohra', 'Mandeep Singh',
        'P Dubey', 'S Tyagi', 'AN Ghosh', 'P Ray Barman', 'BE Hendricks',
        'TP Sudhindra', 'C Ganapathy', 'DJ Muthuswami']
 
-pipe = pickle.load(open('IPL_Model.pkl','rb'))
+
 st.title('IPL Win Predictor 2024')
 
 df=pd.read_csv("Strike_Rates1.csv")
 
 
 col1, col2 = st.columns(2)
+pipe = pickle.load(open('IPL_Model.pkl','rb'))
 
 with col1:
     batting_team = st.selectbox('Select the batting team',sorted(teams))
@@ -218,5 +219,5 @@ if st.button('Predict Probability'):
     result = pipe.predict_proba(input_df)
     loss = result[0][0]
     win = result[0][1]
-    st.header(batting_team + "- " + str(round(win * 100)) + "%")
-    st.header(bowling_team + "- " + str(round(loss * 100)) + "%")
+    st.header(batting_team + "- " + str(round(win * 100,1)) + "%")
+    st.header(bowling_team + "- " + str(round(loss * 100,1)) + "%")
