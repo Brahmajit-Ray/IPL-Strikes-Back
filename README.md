@@ -1,6 +1,6 @@
 # IPL-Strikes-Back
 A predictor that returns the probability of a team winning given the current match situation in IPL.<br>
-Checkout the predictor here: https://ipl-strikes-back.onrender.com
+Checkout the predictor here: https://ipl-win-pred.streamlit.app/
 
 Improvements from the previous predictor:<br>
 Trained with the latest data(till IPL 2024)<br>
